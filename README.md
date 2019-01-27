@@ -25,11 +25,17 @@ This demo project can be run, tested, modified and expanded using the Matlab iRo
 - Make sure the map file map.txt is saved as plain .txt file
 - Start the Matlab Simulator UI by typing SimulatorGUI in the command line
 - Once the Simulator UI is up and running import the map by pressing Load Map
+
+
+![Map](docs/map.JPG)
+
+
 - Load the autonomous control program iRobotController.m by pressing Start
 
 ## Architecture
 
-The overall architecture overview can be found under the docs folder. 
+![Architecture](docs/architecture.JPG)
+
 In the demo program the robot performs two tasks. During the first task it finds the exit of a 
 room and leaves without bumping. In the second task it detects a beacon with his Camera and performs homing.
 The robot accomplishes the above tasks by means of different behaviours. Behaviours run in parallel and
@@ -39,9 +45,12 @@ Beyond behaviour coordination, the arbitrator polls sensors and forwards the inf
 The arbitrator keeps track of the system goals stored in a queue and dequeues them as soon as they are achieved. 
 The control loop terminates as soon as all goals are achieved.
 Each goal defined in the system depends on a predefined set of behaviours.
+
 While the robot is exploring its environment it detects special landmarks such as the exit of the room and 
 stores them short term for the duration of a control cycle. Landmarks are constructed and maintained in a cartographic 
 module and available for use in the arbitrator.
+
+![Aperture](docs/Aperture.JPG)
 
 ## Licensing 
 
